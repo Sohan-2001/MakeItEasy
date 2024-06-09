@@ -1,0 +1,44 @@
+#top{
+    width: 100%; /* Full width */
+    height: 50px;
+    background-color: #333; /* Background color */
+    padding: 10px 0; /* Some padding */
+    text-align: center; /* Centering the content */
+    position: fixed; /* Fixed at the top */
+    top: 0; /* Stick to the top */
+    left: 0; /* Align to the left */
+    z-index: 1000;
+    display:flex; /* Use Flexbox to align children */
+    align-items: center; /* Center children vertically */
+    justify-content: center; /
+}
+
+#searchBar{
+    border-radius: 3px;
+    padding: 3px;
+    width: 100%; /* Take full width of the container */
+    max-width: 500px; /* Maximum horizontal width */
+    min-height: 20px; /* Minimum height */
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    border:none;
+    background-color: rgb(237, 231, 231);
+    font-weight: 600;
+    font-size: large;
+}
+
+#bottom{
+    width: 100%; /* Full width */
+    background-color: #120831; /* Background color */
+    display: flex;
+    left:0;
+    position: fixed; /* Fixed at the top */
+    height: 100vh;
+}
+
+
+#searchBarDiv {
+    display: flex; /* Use Flexbox to align children */
+    gap: 5px; /* Space between the input and the button */
+}
+
