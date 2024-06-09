@@ -7,7 +7,7 @@ document.addEventListener('input', function (event) {
     input.style.width = Math.max(minWidth, Math.min(width, maxWidth)) + 'px';
   }, false);
 
-  async function GO() {
+ function GO() {
     // Get the URL from the input field
     var url_ = document.getElementById('searchBar').value;
   
