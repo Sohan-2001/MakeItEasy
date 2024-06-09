@@ -8,17 +8,29 @@ document.addEventListener('input', function (event) {
   }, false);
 
  function GO() {
-    // Get the URL from the input field
-    var url_ = document.getElementById('searchBar').value;
-  
-    // Check if the URL starts with 'http://' or 'https://'
-    if (!url_.match(/^[a-zA-Z]+:\/\//)) {
-      url_ = 'http://' + url_;
-    }
+  // Get the URL from the input field
+  var url_ = document.getElementById('searchBar').value;
 
-    
-  
-    // Set the innerHTML of the #bottom div to an iframe with the URL
-    document.getElementById('bottom').innerHTML = '<iframe src="' + url_ + '" width="100%" height="100%"></iframe>';
+  // Check if the URL starts with 'http://' or 'https://'
+  if (!url_.match(/^[a-zA-Z]+:\/\//)) {
+    url_ = 'http://' + url_;
   }
-  
+
+  // Attempt to set the iframe src attribute
+  try {
+    var iframe = document.createElement('iframe');
+    iframe.src = url_;
+    iframe.width = '100%';
+    iframe.height = '100%';
+    iframe.frameBorder = '0';
+    iframe.setAttribute('allowfullscreen', '');
+
+    // Clear the #bottom div and append the new iframe
+    var bottomDiv = document.getElementById('bottom');
+    bottomDiv.innerHTML = '';
+    bottomDiv.appendChild(iframe);
+  } catch (e) {
+    console.error('Error loading iframe:', e);
+    alert('There was an error loading the content. Please check the console for more details.');
+  }
+}
